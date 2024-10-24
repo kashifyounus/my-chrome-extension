@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Credit Report Downloader",
+  "version": "1.0.0",
+  "description": "Chrome extension",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
